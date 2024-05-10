@@ -1,4 +1,5 @@
 const Seat = require("./Seat");
+const {Feature} = require("./FeatureToggles");
 
 class Conference {
     #_code;
@@ -17,6 +18,10 @@ class Conference {
     }
 
 
+    reserve(hoodie, featureToggles) {
+        return !!featureToggles.isEnabled(Feature.RESERVE_HOODIE);
+
+    }
 }
 
 module.exports = Conference;
